@@ -25,6 +25,14 @@ class APIManager: SessionManager {
     static let callbackURLString = "alamoTwitter://"
     
     // MARK: Twitter API methods
+    static func logout()
+    {
+        User.current = nil
+        
+        NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
+    }
+    
+   
     func login(success: @escaping () -> (), failure: @escaping (Error?) -> ()) {
         
         // Add callback url to open app when returning from Twitter login on web

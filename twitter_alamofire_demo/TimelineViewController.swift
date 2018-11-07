@@ -8,14 +8,24 @@
 
 import UIKit
 
+
+
 class TimelineViewController: UIViewController {
+    
+    @IBOutlet weak var onLogoutButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func onLogoutButton(_ sender: Any)
+    {
+        
+        APIManager.logout()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
